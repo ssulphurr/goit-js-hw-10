@@ -18,3 +18,30 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
+
+p {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.ul-list {
+  list-style-type: none;
+  padding-left: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.li-item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.one-country-name{
+  font-size: 36px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}

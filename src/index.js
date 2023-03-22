@@ -55,7 +55,7 @@ function renderCountriesList(countries) {
 
   const markup = countries
     .map(country => {
-      return `<li>
+      return `<li class="li-item">
       <img width="30" src="${country.flags.svg}" alt="${country.name.official}">
       <p>${country.name.official}</p>
     </li>`;
@@ -63,21 +63,22 @@ function renderCountriesList(countries) {
     .join('');
   refs.countryList.innerHTML = markup;
 
-  refs.countryList.style.listStyleType = 'none';
-  refs.countryList.style.paddingLeft = '10px';
+  refs.countryList.classList.add('ul-list');
 }
 
 function renderOneCounty(countries) {
   refs.countryList.innerHTML = '';
 
   const markup = countries.map(country => {
-    return `<img width="30" src="${country.flags.svg}" alt="${
-      country.name.official
-    }">
-      <p>${country.name.official}</p>
-      <p>${country.capital}</p>    
-      <p>${country.population}</p>
-      <p>${Object.values(country.languages).join(', ')}</p>`;
+    return `<span class="one-country-name"><img width="30" src="${
+      country.flags.svg
+    }" alt="${country.name.official}">
+      <p><b>${country.name.official}</b></p></span>
+      <p><b>Capital:</b> ${country.capital}</p>   
+      <p><b>Population:</b> ${country.population}</p>
+      <p><b>Languages:</b> ${Object.values(country.languages).join(
+        ', '
+      )}</p></li>`;
   });
 
   refs.countryInfo.innerHTML = markup;

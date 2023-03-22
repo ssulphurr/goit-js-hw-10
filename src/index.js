@@ -12,7 +12,7 @@ const refs = {
 refs.inputEl.addEventListener('input', debounce(onType, DEBOUNCE_DELAY));
 
 function fetchCountries(name) {
-  fetch(
+  return fetch(
     `https://restcountries.com/v3.1/name/${name}?fields=name,capital,population,flags,languages `
   ).then(response => {
     if (!response.ok) {
@@ -31,7 +31,7 @@ function onType(evt) {
 function renderCountriesList(countries) {
   const markup = countries
     .map(country => {
-      `<li>
+      return `<li>
             <p>${country.name.official}</p>
     </li>`;
     })
